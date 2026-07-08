@@ -1,0 +1,36 @@
+;; Public prompt manifest for Spirit judge admission flows.
+;; Schema documentation:
+;; (PromptPack <judge-name> <message-role> [(Section <section-name> <path>) ...])
+;; (FixtureSet <judge-name> <purpose> [<path> ...])
+[
+  (PromptPack spirit-intent-admission-judge system [
+    (Section role prompts/intent-admission/role.md)
+    (Section record-shape prompts/intent-admission/record-shape.md)
+    (Section justification-shape prompts/intent-admission/justification-shape.md)
+    (Section burden-ladder prompts/intent-admission/burden-ladder.md)
+    (Section checklist prompts/intent-admission/checklist.md)
+    (Section rejection-reasons prompts/intent-admission/rejection-reasons.md)
+    (Section nota-output prompts/intent-admission/nota-output.md)
+    (Section few-shot prompts/intent-admission/few-shot.md)
+    (Section user-template prompts/intent-admission/user-template.md)
+    (Section retry-instruction prompts/retry-instruction.md)
+    (Section diagnostics prompts/diagnostics.md)
+  ])
+  (PromptPack spirit-referent-registration-judge system [
+    (Section system prompts/referent-registration/system.md)
+    (Section user-template prompts/referent-registration/user-template.md)
+    (Section retry-instruction prompts/retry-instruction.md)
+    (Section diagnostics prompts/diagnostics.md)
+  ])
+  (ConfigSet spirit-judge-provider-boundary public [
+    config/provider-policy.nota
+  ])
+  (FixtureSet spirit-intent-admission-judge test-material [
+    fixtures/intent-admission/conservative-refusal.nota
+    fixtures/intent-admission/privacy-boundary.nota
+    fixtures/intent-admission/clear-judge-testing.fixture.nota
+  ])
+  (FixtureSet spirit-judge-diagnostics test-material [
+    fixtures/diagnostics/redacted-diagnostics.nota
+  ])
+]

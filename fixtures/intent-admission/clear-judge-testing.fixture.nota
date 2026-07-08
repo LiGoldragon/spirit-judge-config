@@ -1,0 +1,3 @@
+;; Test material only. This preserves the historical clear-judge-testing style as
+;; a live-like fixture and explicitly does not claim durable Spirit intent.
+(Fixture clear-judge-testing test-material [Used only to validate prompt/config loading and verdict formatting])

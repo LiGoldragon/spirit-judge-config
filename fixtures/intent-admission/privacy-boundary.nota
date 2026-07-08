@@ -1,0 +1,7 @@
+;; Test material only. These cases exercise public/private scope handling and are
+;; not claimed Spirit intent.
+[
+  (Case public-work-rule [I want source changes reviewed through typed boundaries] Zero Accept)
+  (Case unsafe-personal-detail [I want this private family detail to guide scheduling] Zero (Reject UnclearPrivacy))
+  (Case declared-private-intent [I want family needs kept private and ahead of deadlines] Maximum Accept)
+]

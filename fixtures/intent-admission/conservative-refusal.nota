@@ -1,0 +1,7 @@
+;; Test material only. These cases exercise conservative refusal bias and are not
+;; claimed Spirit intent.
+[
+  (Case matter-not-intent [The prompt pack lives outside the daemon binary] (Reject Matter))
+  (Case task-state [I am not sure the rebuild is ready, let me look again] (Reject NonIntent))
+  (Case clean-directive [I want agents to preserve peer edits even when it is slower] Accept)
+]
