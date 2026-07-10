@@ -1,2 +1,3 @@
-;; Non-secret provider boundary. This is configuration policy, not credentials.
-(ProviderPolicy public-config [provider-name model-name maximum-output-tokens reasoning-effort thinking-mode] [api-key token secret endpoint-credential])
+;; Non-secret provider policy. The executable resolves the named external session
+;; at runtime; this file never carries session material or credential values.
+(ProviderPolicy openai-codex (Production gpt-5.6-terra Medium) (CompatibilityTest gpt-5.6-luna Medium) [api-key token secret endpoint-credential])
