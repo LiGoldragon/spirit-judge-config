@@ -45,6 +45,7 @@
           grep -q "Already-registered referents" "$src/prompts/referent-registration/user-template.md"
           grep -q "default verdict on any candidate is REJECT" "$src/prompts/intent-admission/checklist.md"
           grep -q "redacted" "$src/prompts/diagnostics.md"
+          grep -q "(AmbientSessionReference codex-login)" "$src/config/provider-policy.nota"
           grep -q "(Production gpt-5.6-terra Medium)" "$src/config/provider-policy.nota"
           grep -q "(CompatibilityTest gpt-5.6-luna Medium)" "$src/config/provider-policy.nota"
           grep -q "no credential values" "$src/fixtures/diagnostics/redacted-diagnostics.nota"
