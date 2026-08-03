@@ -17,8 +17,7 @@ Spirit judge prompt packs formerly embedded under
 
 Owned here:
 
-- public prompt prose for Spirit intent-admission and referent-registration
-  judges;
+- public prompt prose for the Spirit intent-admission judge;
 - NOTA manifests that name prompt files, prompt order, and fixture files;
 - non-secret provider and model-selection configuration data when the eventual
   adapter needs it;

@@ -1,56 +1,55 @@
-WORKED EXAMPLES. Study the contrastive pairs — within a pair only the tested feature differs.
+# Worked examples
 
-[Record — the burden pair, the single most important lesson]
-A) Entry Certainty High; Testimony [I could maybe use the schema-derived contracts to emit most of the client side]; Reasoning argues the schema should emit most client machinery. The quote hedges (could, maybe) and cannot clear High. -> (Reject (Overstated [could and maybe are hedged and clear only Low; High is unearned]))
-B) The SAME Testimony, Entry Certainty Low. The hedge honestly clears Low. -> Accept
+[Direct warrant]
 
-[Record — orthogonal axes]
-C) Entry Certainty VeryLow, Importance High; Testimony [I keep coming back to wanting agents to ask me before any destructive change, I really am not sure how strict yet]; Reasoning notes the want recurs across three sessions and blocks settling the autonomy boundary. Tentative wording clears VeryLow; the want is a genuine psyche preference (not a description of how a component works); recurrence + blocking supports High importance. -> Accept
-D) Entry Certainty VeryLow, Importance High; Testimony [maybe stricter confirmation could be interesting]; Reasoning asserts High importance with no recurrence or blast-radius basis. -> (Reject (ImportanceUnsupported [no recurrence or blast-radius evidence is offered for High importance]))
-AA) Entry Certainty Medium, Importance High, Privacy Maximum; Testimony [I want my family to come first whenever it clashes with a work deadline, and keep this one private — it matters more than almost anything to me]; Reasoning notes the psyche directly named the Privacy (Maximum) and high Importance rungs for a genuine private-affairs want — a durable universal direction about their own life and the world, not a rule about operating Spirit. The named rungs are direct evidence for those values; privacy is orthogonal and nominal, so a private-affairs want is admissible intent carrying its privacy level, never rejected as Matter on privacy grounds. -> Accept
-AB) Entry Certainty Medium, Importance High; Testimony [I want every component to fail loudly instead of quietly degrading]; Reasoning argues High importance because the rule governs the whole system, is architecturally central, and recurs across the workspace. The arrow is a durable universal rule about how the work itself should behave (not how to operate Spirit); architectural centrality + recurrence supports High importance even without a direct rung declaration. -> Accept
+A) Entry Description [Agents preserve peer edits even when doing so is slower]; Testimony [do not overwrite their work just because it is convenient, preserve it]. The quote directly states a durable value held against convenience. -> Accept
 
-[Record — testimony production]
-E) Entry any; Testimony empty; Reasoning is a confident paraphrase of what the psyche supposedly wants. No verbatim quote. -> (Reject (MissingTestimony [no verbatim psyche quote is supplied]))
-F) Entry Decision; Testimony [the architecture decision is finalized and the team will proceed accordingly per our alignment]. That sentence reads like agent prose, not how this psyche talks. -> (Reject (TestimonyFabricated [the quote reads like polished agent prose, not a human utterance]))
-G) Entry Decision High; Testimony quote [yes do that] with Antecedent [shall we make the daemon reject inline NOTA configuration?]. The bare affirmation is anchored by its antecedent and clears High. -> Accept
-H) The SAME [yes do that] with NO antecedent. Meaningless alone. -> (Reject (MissingTestimony [a bare yes carries no arrow without its antecedent]))
+B) The same Entry with Testimony [the merge is failing today]. The quote does not license the proposition. -> (Reject (InsufficientWarrant [the testimony concerns current task state and does not license this standing directive]))
 
-[Record — shape and classification]
-I) One Entry whose Description bundles a key-resolution rule AND a deploy-cadence rule. -> (Reject (Compound [key resolution and deploy cadence are two separable arrows]))
-J) Testimony [I am not sure the rebuild is ready, let me look again]; Reasoning records it as a Constraint. Transient uncertainty, not durable intent. -> (Reject (NonIntent [a momentary not-sure-yet is task state, not a durable arrow]))
-K) Entry Description [Canonical prose names are criome for the authentication component and criomos for the operating system name; creome and creomos are misspellings]; Testimony [its criome and criomos, not creome and creomos]. The description centers the forbidden spellings instead of only stating the canonical names. -> (Reject (NegativeGuideline [the rule is framed around rejected spellings; reword as the affirmative canonical naming rule]))
-L) The SAME Testimony, Entry Description [Canonical prose uses criome for the authentication component and criomos for the operating system name; exact on-disk path spelling is preserved when citing repository paths]. The positive names are the center; the path citation boundary is affirmative. -> Accept
-M) Entry Domains [spirit]; the daemon name is a particular. -> (Reject (UnclearDomain [spirit is a referent, not a universal domain; classify by subject like AdmissionControl]))
+C) Testimony is empty and Reasoning confidently paraphrases what the psyche supposedly wants. -> (Reject (MissingTestimony [no verbatim psyche quote is supplied]))
 
-[Record — subject-matter boundary (Matter)]
-MA) Entry Description [The judge admission pipeline runs the eleven-gate checklist in order and stops at the first failed gate, emitting a directed verdict]; Testimony [the judge should stop at the first failed gate]. The substance describes how the judge IS built — a mechanism, not a want. -> (Reject (Matter [this describes the judge's own mechanism; it belongs in the judge prompt / ARCHITECTURE doc in the repository, not captured as intent]))
-MB) Entry Description [The CollectRemovalCandidates meta op archives then retracts each matching record]; Testimony [archive before retract]. A specification of an implementation detail, not durable intent. -> (Reject (Matter [an implementation/spec detail of Spirit's deletion path; record it in the code and ARCHITECTURE doc, not the intent database]))
-MC) A mixed record: Entry Description [Agents should prefer small commits, AND the Nexus plane translates Signal input into SEMA writes through the NexusEffectCommand enum]; Testimony [I want small commits]. A thin directive bundled with a description of Spirit's architecture — the aggressive lean treats the whole thing as Matter. -> (Reject (Matter [the architectural description is matter for the repo; re-capture the small-commits directive cleanly on its own]))
-MD) The directive from MC re-captured cleanly: Entry Description [Agents should prefer small, single-concern commits]; Testimony [I want small commits]. A genuine psyche want with no architectural matter attached. -> Accept
-ME) Entry Description [Agents capture durable intent through the Spirit CLI before they start coding]; Testimony [I want every agent to capture intent before it codes]. Strip the framing: the load-bearing directive — capture intent — is an action performed WITH Spirit, i.e. a rule about how to operate Spirit itself (agent-training material). -> (Reject (Matter [a rule about how to use Spirit; it belongs in a skill or AGENTS, not the intent database]))
-MF) Entry Kind Decision, Description [The judge journal will use redb with an rkyv value codec at schema version 5]; Testimony [let's store the journal in redb]. A one-off decision scoped to a single component's storage, not a universal rule about the work. -> (Reject (Matter [a one-off architectural decision about one component; record it in a bead and the ARCHITECTURE doc, not as durable intent]))
-MG) Entry Kind Decision, Description [New repositories default to public visibility]; Testimony [new repos default to public]. Run the five-gate test: it is a default, not an aim/value/belief (gate 1); a convenience, not a want held against cost (gate 2); one local operational case, not an orienting rule (gate 3); and its why is operational, not a value (gate 4). A sensible one-off default is a halo, not intent. -> (Reject (Matter [a default operational setting; record it in the repo tooling or docs, not the intent database]))
-MH) Entry Description [The runtime daemon accepts owner-only configuration through a separate meta socket, while ordinary peers use the working socket]; Testimony [put owner configuration on the meta socket]. This is a daemon/runtime protocol and component-boundary choice. It may be durable architecture, but it is not the psyche's standing intent. -> (Reject (Matter [a daemon protocol and component-boundary specification belongs in ARCHITECTURE and contract tests, not the intent database]))
-MI) Entry Description [Spirit prompt examples should be added to the compiled prompt files before live evals are expanded]; Testimony [put new examples in the prompt guidance first]. This is implementation doctrine for Spirit's own prompt/test workflow — a rule about how to operate Spirit. -> (Reject (Matter [Spirit-use and implementation guidance belongs in the repository guidance, not as durable intent]))
+D) Testimony [the architecture decision is finalized and the team will proceed accordingly per our alignment]. The sentence reads like polished agent prose. -> (Reject (TestimonyFabricated [the quote does not read like a human utterance from the psyche]))
 
-[Record — cross-record collision]
-N) Candidate restates a forward arrow already present verbatim in the bundle. -> (Reject (Duplicate [the same forward arrow already lives in record in the bundle]))
-O) Candidate says daemons MAY parse NOTA config; the bundle holds a live psyche arrow that daemons NEVER parse NOTA, and no quote authorizes reversing it. -> (Reject (Contradiction [negates the live daemons-never-parse-NOTA arrow with no authorizing psyche quote]))
-Y) Candidate is a fresh Record whose reasoning says it refines target t00s, and the bundle contains t00s as the live record holding that arrow. The quote supports tightening t00s, not creating a sibling record. -> (Reject (InsufficientWarrant [the testimony licenses editing t00s, not a fresh Record; remand for Clarify or Supersede]))
-Z) Candidate is a fresh Record saying daemons MAY parse NOTA config; the bundle holds daemons NEVER parse NOTA; Testimony [change the daemon config rule so daemons may parse NOTA config now]. The psyche authorizes a reversal, but a fresh sibling would leave the old arrow live. -> (Reject (InsufficientWarrant [the testimony authorizes replacement, but the repair shape is Supersede or ChangeRecord, not a fresh Record]))
+E) Testimony [yes do that] with Antecedent [shall agents preserve peer edits even when it is slower?]. The affirmation has its meaning-bearing antecedent. -> Accept
 
-[Clarify — sharpen vs trample]
-P) Target says the judge is binary; Clarify adds that a reject is a remand the agent re-pleads. Same arrow, sharper. -> Accept
-Q) Target says the judge is binary; Clarify rewrites it to allow admitting at a corrected certainty. That reverses the arrow. -> (Reject (ClarifyTramples [admitting-at-corrected-certainty inverts the binary arrow; that is a Supersede, not a Clarify]))
+F) The same [yes do that] without an antecedent. -> (Reject (MissingTestimony [a bare affirmation carries no proposition without its antecedent]))
 
-[Supersede — multi-replacement preservation and authorization]
-R) Retire two distinct live arrows (X: testimony stores raw words; Y: asterisks are a render marker) and install TWO replacements preserving both; Testimony carries the psyche quote [supersede those two with these]. -> Accept
-S) The SAME two targets collapsed into ONE replacement that keeps only X. -> (Reject (ClarifyLosesMeaning [a single replacement drops arrow Y; preserve both or it loses meaning]))
-T) Supersede a live psyche record; Reasoning argues only that the agent judges it stale; no psyche quote authorizes the retirement. -> (Reject (InsufficientWarrant [no verbatim psyche authorization to retire a psyche arrow; staleness judged by the agent is not enough]))
-U) Supersede names target abcd, but abcd is absent from the bundle. -> (Reject (SupersedeTargetMissing [target abcd is not in the bundle and cannot be judged]))
+[Intent boundary]
 
-[Retire / ChangeRecord / ChangeCertainty]
-V) Retire a record; Testimony [kill that rule, we are not doing backward compatibility]. Verbatim psyche authorization. -> Accept
-W) ChangeRecord fixes a typo in a Description, same arrow, same magnitudes. -> Accept
-X) ChangeRecord keeps the wording but raises Certainty from Medium to Maximum; Testimony is the original [we should probably do this]. The words still clear only Medium. -> (Reject (Overstated [should probably clears Medium; Maximum is unearned by the quote]))
+G) One Entry bundles a peer-edit rule and a deployment-cadence rule. -> (Reject (Compound [the submission contains two separable arrows]))
+
+H) Testimony [I am not sure the rebuild is ready, let me look again]. -> (Reject (NonIntent [a momentary status is not durable orienting will]))
+
+I) Entry Description [Agents must never overwrite peer edits]. The operative guidance is a prohibition. -> (Reject (NegativeGuideline [restate the desired affirmative practice of preserving peer edits]))
+
+J) Entry Description [The daemon reads owner configuration from the meta socket]. -> (Reject (Matter [a daemon protocol belongs in the runtime architecture and contract tests]))
+
+K) Entry Description [Agents preserve peer edits, and the daemon reads owner configuration from the meta socket]. -> (Reject (Matter [the standing directive is welded to repository-owned architecture; resubmit the directive alone]))
+
+[Classification and importance]
+
+L) Entry Domains [spirit]. The value names one system rather than a universal subject. -> (Reject (UnclearDomain [classify the universal subject rather than the particular system]))
+
+M) Entry Importance High; Testimony [I want agents to ask before destructive changes]; Reasoning shows the rule recurs across sessions and blocks settling the autonomy boundary. -> Accept
+
+N) The same Importance with no recurrence, blast-radius, centrality, blocking, or direct high-importance evidence. -> (Reject (ImportanceUnsupported [High importance is asserted without supporting evidence]))
+
+[Operation fit and collision]
+
+O) A fresh Record repeats a forward arrow already present in the bundle. -> (Reject (Duplicate [the same forward arrow already lives in the supplied records]))
+
+P) A fresh Record reverses a live arrow without psyche authorization. -> (Reject (Contradiction [the submission negates a live psyche arrow without authorizing testimony]))
+
+Q) A fresh Record refines named target t00s, and the testimony supports tightening t00s rather than creating a sibling. -> (Reject (InsufficientWarrant [the evidence licenses a maintenance operation on t00s, not a fresh Record]))
+
+R) Clarify sharpens wording while preserving the target's arrow. -> Accept
+
+S) Clarify redirects or inverts the target's arrow. -> (Reject (ClarifyTramples [the proposed clarification changes rather than sharpens the original meaning]))
+
+T) A multi-target Supersede silently drops one target's distinct arrow. -> (Reject (ClarifyLosesMeaning [the replacement does not preserve every material arrow]))
+
+U) Supersede names target abcd, but abcd is absent from the bundle. -> (Reject (SupersedeTargetMissing [target abcd is not available for judgement]))
+
+V) Retire has Testimony [kill that rule, we are not doing it anymore]. -> Accept
+
+W) Retire is justified only by the agent's assessment that the rule is stale. -> (Reject (InsufficientWarrant [no verbatim psyche authorization supports retiring the live arrow]))

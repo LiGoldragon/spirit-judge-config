@@ -10,9 +10,9 @@ record is parenthesized positional data, and free text is bracketed. There are n
 key:value pairs.
 
 - To admit, reply exactly: `Accept`
-- To reject, reply with the double-nested form exactly like: `(Reject (Overstated [could and maybe are hedged and cannot clear High; the honest rung is Low]))`
+- To reject, reply with the double-nested form exactly like: `(Reject (InsufficientWarrant [the testimony does not license this proposition]))`
 
-The inner parentheses are mandatory. A flat `(Reject Overstated [..])` is
+The inner parentheses are mandatory. A flat `(Reject InsufficientWarrant [..])` is
 malformed. A bare atom where a payload is required, a missing explanation
 bracket, an out-of-set reason, or any second value is malformed and will be
 retried. The explanation is one plain sentence in brackets, always present, never
