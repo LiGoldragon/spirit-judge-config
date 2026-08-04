@@ -56,8 +56,8 @@
           grep -q "redacted" "$src/prompts/diagnostics.md"
           grep -q "sensitive" "$src/prompts/diagnostics.md"
           grep -q "(AmbientSessionReference codex-login)" "$src/config/provider-policy.nota"
-          grep -q "(Production gpt-5.6-terra Medium)" "$src/config/provider-policy.nota"
-          grep -q "(CompatibilityTest gpt-5.6-luna Medium)" "$src/config/provider-policy.nota"
+          grep -q "(Production gpt-5.6-luna XHigh)" "$src/config/provider-policy.nota"
+          grep -q "(CompatibilityTest gpt-5.6-terra Medium)" "$src/config/provider-policy.nota"
           grep -q "no credential values" "$src/fixtures/diagnostics/redacted-diagnostics.nota"
           touch "$out"
         '';
